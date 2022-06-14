@@ -38,6 +38,7 @@ def test_parse(debug):
     output = get_output(inp, debug)
 
     robotnicy = output["robotnicy"]
+    spekulanci = output["spekulanci"]
 
     assert(get_robotnik(1, robotnicy)["kariera"] == "programista")
     assert(get_robotnik(2, robotnicy)["kariera"] == "rolnik")
@@ -95,6 +96,7 @@ def test_parse(debug):
 
     assert(get_spekulant(1, spekulanci)["zasoby"]["diamenty"] == 100)
     assert(get_spekulant(1, spekulanci)["zasoby"]["jedzenie"] == 100)
+    print(get_spekulant(1, spekulanci)["zasoby"])
     assert(get_spekulant(1, spekulanci)["zasoby"]["narzedzia"] == [100])
     assert(get_spekulant(1, spekulanci)["zasoby"]["programy"] == [100])
     assert(get_spekulant(1, spekulanci)["zasoby"]["ubrania"] == [100])
