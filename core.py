@@ -167,13 +167,20 @@ def gielda():
 # kariera spekulanta
 
 def wypukly():
-	return "wypukly"
+	return {
+		"typ": "wypukly"
+	}
 
 def regulujacy():
-	return "regulujacy_rynek"
+	return {
+		"typ": "regulujacy_rynek"
+	}
 
 def sredni():
-	return "sredni"
+	return {
+		"typ": "sredni",
+		"historia_spekulanta_sredniego": 10
+	}
 
 
 # inne

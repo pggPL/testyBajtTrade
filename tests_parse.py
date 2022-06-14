@@ -90,9 +90,10 @@ def test_parse(debug):
     assert(get_robotnik(1, robotnicy)["zasoby"]["ubrania"] == [100])
 
 
-    assert(get_spekulant(1, spekulanci)["kariera"] == "wypukly")
-    assert(get_spekulant(2, spekulanci)["kariera"] == "regulujacy_rynek")
-    assert(get_spekulant(3, spekulanci)["kariera"] == "sredni")
+    assert(get_spekulant(1, spekulanci)["kariera"]["typ"] == "wypukly")
+    assert(get_spekulant(2, spekulanci)["kariera"]["typ"]  == "regulujacy_rynek")
+    assert(get_spekulant(3, spekulanci)["kariera"]["typ"]  == "sredni")
+    assert(get_spekulant(3, spekulanci)["kariera"]["historia_spekulanta_sredniego"]  == 10)
 
     assert(get_spekulant(1, spekulanci)["zasoby"]["diamenty"] == 100)
     assert(get_spekulant(1, spekulanci)["zasoby"]["jedzenie"] == 100)
