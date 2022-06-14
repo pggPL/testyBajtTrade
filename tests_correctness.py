@@ -18,23 +18,23 @@ def test_correctness1(debug):
     output = get_output(inp, debug)
 
 
-    assert(output["info"]["ceny_max"]["ubrania"] == 1.3)
-    assert(output["info"]["ceny_max"]["programy"] == 1.0)
-    assert(output["info"]["ceny_max"]["jedzenie"] == 1000.0)
-    assert(output["info"]["ceny_max"]["narzedzia"] == 1.5)
+    assert(output[0]["info"]["ceny_max"]["ubrania"] == 1.3)
+    assert(output[0]["info"]["ceny_max"]["programy"] == 1.0)
+    assert(output[0]["info"]["ceny_max"]["jedzenie"] == 1000.0)
+    assert(output[0]["info"]["ceny_max"]["narzedzia"] == 1.5)
 
-    assert(output["info"]["ceny_min"]["ubrania"] == 1.3)
-    assert(output["info"]["ceny_min"]["programy"] == 1.0)
-    assert(output["info"]["ceny_min"]["jedzenie"] == 1000.0)
-    assert(output["info"]["ceny_min"]["narzedzia"] == 1.5)
+    assert(output[0]["info"]["ceny_min"]["ubrania"] == 1.3)
+    assert(output[0]["info"]["ceny_min"]["programy"] == 1.0)
+    assert(output[0]["info"]["ceny_min"]["jedzenie"] == 1000.0)
+    assert(output[0]["info"]["ceny_min"]["narzedzia"] == 1.5)
 
-    assert(output["info"]["ceny_srednie"]["ubrania"] == 1.3)
-    assert(output["info"]["ceny_srednie"]["programy"] == 1.0)
-    assert(output["info"]["ceny_srednie"]["jedzenie"] == 1000.0)
-    assert(output["info"]["ceny_srednie"]["narzedzia"] == 1.5)
+    assert(output[0]["info"]["ceny_srednie"]["ubrania"] == 1.3)
+    assert(output[0]["info"]["ceny_srednie"]["programy"] == 1.0)
+    assert(output[0]["info"]["ceny_srednie"]["jedzenie"] == 1000.0)
+    assert(output[0]["info"]["ceny_srednie"]["narzedzia"] == 1.5)
 
 
 
-    assert(get_robotnik(1, output["robotnicy"])["zasoby"]["diamenty"] == 3000100.0)
+    assert(get_robotnik(1, output[0]["robotnicy"])["zasoby"]["diamenty"] == 3000100.0)
 
     

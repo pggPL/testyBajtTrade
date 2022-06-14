@@ -34,11 +34,12 @@ def test_parse(debug):
     	spekulant(2, kariera=regulujacy()),
     	spekulant(3, kariera=sredni()),
     ]
-    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=1))
+    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=3))
     output = get_output(inp, debug)
+    day1 = output[0]
 
-    robotnicy = output["robotnicy"]
-    spekulanci = output["spekulanci"]
+    robotnicy = day1["robotnicy"]
+    spekulanci = day1["spekulanci"]
 
     assert(get_robotnik(1, robotnicy)["kariera"] == "programista")
     assert(get_robotnik(2, robotnicy)["kariera"] == "rolnik")
