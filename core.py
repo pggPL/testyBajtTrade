@@ -170,7 +170,7 @@ def wypukly():
 	return "wypukly"
 
 def regulujacy():
-	return "regulujacy"
+	return "regulujacy_rynek"
 
 def sredni():
 	return "sredni"
