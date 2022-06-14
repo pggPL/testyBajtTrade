@@ -34,7 +34,7 @@ def test_parse(debug):
     	spekulant(2, kariera=regulujacy()),
     	spekulant(3, kariera=sredni()),
     ]
-    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=1))
+    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=0))
     output = get_output(inp, debug)
 
     robotnicy = output["robotnicy"]
@@ -47,3 +47,62 @@ def test_parse(debug):
 
     assert(get_robotnik(1, robotnicy)["zmiana"] == "rewolucjonista")
     assert(get_robotnik(2, robotnicy)["zmiana"] == "konserwatysta")
+
+    assert(get_robotnik(1, robotnicy)["kupowanie"]["typ"] == "gadzeciarz")
+    assert(get_robotnik(1, robotnicy)["kupowanie"]["liczba_narzedzi"] == 100)
+    assert(get_robotnik(2, robotnicy)["kupowanie"]["typ"] == "technofob")
+    assert(get_robotnik(3, robotnicy)["kupowanie"]["typ"] == "czyscioszek")
+    assert(get_robotnik(4, robotnicy)["kupowanie"]["typ"] == "zmechanizowany")
+    assert(get_robotnik(4, robotnicy)["kupowanie"]["liczba_narzedzi"] == 100)
+
+
+    assert(get_robotnik(1, robotnicy)["produkcja"]["typ"] == "chciwy")
+    assert(get_robotnik(2, robotnicy)["produkcja"]["typ"] == "krotkowzroczny")
+    assert(get_robotnik(3, robotnicy)["produkcja"]["typ"] == "sredniak")
+    assert(get_robotnik(3, robotnicy)["produkcja"]["historia_sredniej_produkcji"] == 3)
+    assert(get_robotnik(4, robotnicy)["produkcja"]["typ"] == "perspektywiczny")
+    assert(get_robotnik(4, robotnicy)["produkcja"]["historia_perspektywy"] == 3)
+    assert(get_robotnik(5, robotnicy)["produkcja"]["typ"] == "losowy")
+
+    assert(get_robotnik(1, robotnicy)["uczenie"]["typ"] == "pracus")
+    assert(get_robotnik(2, robotnicy)["uczenie"]["typ"] == "oszczedny")
+    assert(get_robotnik(2, robotnicy)["uczenie"]["limit_diamentow"] == 100)
+    assert(get_robotnik(3, robotnicy)["uczenie"]["typ"] == "student")
+    assert(get_robotnik(3, robotnicy)["uczenie"]["okres"] == 5)
+    assert(get_robotnik(3, robotnicy)["uczenie"]["zapas"] == 2)
+    assert(get_robotnik(4, robotnicy)["uczenie"]["typ"] == "okresowy")
+    assert(get_robotnik(4, robotnicy)["uczenie"]["okresowosc_nauki"] == 3)
+    assert(get_robotnik(5, robotnicy)["uczenie"]["typ"] == "rozkladowy")
+
+
+    assert(get_robotnik(5, robotnicy)["produktywnosc"]["diamenty"] == 100)
+    assert(get_robotnik(5, robotnicy)["produktywnosc"]["narzedzia"] == 100)
+    assert(get_robotnik(5, robotnicy)["produktywnosc"]["ubrania"] == 100)
+    assert(get_robotnik(5, robotnicy)["produktywnosc"]["jedzenie"] == 100)
+    assert(get_robotnik(5, robotnicy)["produktywnosc"]["programy"] == 100)
+
+
+    assert(get_robotnik(1, robotnicy)["zasoby"]["diamenty"] == 100)
+    assert(get_robotnik(1, robotnicy)["zasoby"]["jedzenie"] == 100)
+    assert(get_robotnik(1, robotnicy)["zasoby"]["narzedzia"] == [100])
+    assert(get_robotnik(1, robotnicy)["zasoby"]["programy"] == [100])
+    assert(get_robotnik(1, robotnicy)["zasoby"]["ubrania"] == [100])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
