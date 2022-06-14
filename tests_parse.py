@@ -96,7 +96,6 @@ def test_parse(debug):
 
     assert(get_spekulant(1, spekulanci)["zasoby"]["diamenty"] == 100)
     assert(get_spekulant(1, spekulanci)["zasoby"]["jedzenie"] == 100)
-    print(get_spekulant(1, spekulanci)["zasoby"])
     assert(get_spekulant(1, spekulanci)["zasoby"]["narzedzia"] == [100])
     assert(get_spekulant(1, spekulanci)["zasoby"]["programy"] == [100])
     assert(get_spekulant(1, spekulanci)["zasoby"]["ubrania"] == [100])
