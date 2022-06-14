@@ -34,7 +34,7 @@ def test_parse(debug):
     	spekulant(2, kariera=regulujacy()),
     	spekulant(3, kariera=sredni()),
     ]
-    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=0))
+    inp = generate_input(robotnicy=robotnicy, spekulanci=spekulanci, info=info(dlugosc=1))
     output = get_output(inp, debug)
 
     robotnicy = output["robotnicy"]
@@ -83,23 +83,11 @@ def test_parse(debug):
     assert(get_robotnik(5, robotnicy)["produktywnosc"]["programy"] == 100)
 
 
-    assert(get_robotnik(1, robotnicy)["zasoby"]["diamenty"] == 100)
-    assert(get_robotnik(1, robotnicy)["zasoby"]["jedzenie"] == 100)
-    assert(get_robotnik(1, robotnicy)["zasoby"]["narzedzia"] == [100])
-    assert(get_robotnik(1, robotnicy)["zasoby"]["programy"] == [100])
-    assert(get_robotnik(1, robotnicy)["zasoby"]["ubrania"] == [100])
-
-
     assert(get_spekulant(1, spekulanci)["kariera"]["typ"] == "wypukly")
     assert(get_spekulant(2, spekulanci)["kariera"]["typ"]  == "regulujacy_rynek")
     assert(get_spekulant(3, spekulanci)["kariera"]["typ"]  == "sredni")
     assert(get_spekulant(3, spekulanci)["kariera"]["historia_spekulanta_sredniego"]  == 10)
 
-    assert(get_spekulant(1, spekulanci)["zasoby"]["diamenty"] == 100)
-    assert(get_spekulant(1, spekulanci)["zasoby"]["jedzenie"] == 100)
-    assert(get_spekulant(1, spekulanci)["zasoby"]["narzedzia"] == [100])
-    assert(get_spekulant(1, spekulanci)["zasoby"]["programy"] == [100])
-    assert(get_spekulant(1, spekulanci)["zasoby"]["ubrania"] == [100])
 
 
 
