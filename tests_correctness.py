@@ -38,3 +38,43 @@ def test_correctness1(debug):
     assert(get_robotnik(1, output[0]["robotnicy"])["zasoby"]["diamenty"] == 3000100.0)
 
     
+
+def test_correctness_exchange(debug):
+    # test ma na celu sprawdzenie, czy dobrze działa giełda socjalistyczna
+    # robotnik 1 jest biedy i on musi zostać obsłużony najpierw
+    #
+    print("Running test_correctness_exchange...")
+    robotnicy = [
+       robotnik(1, poziom=1, kariera=rzemieslnik(), kupowanie=gadzeciarz(), produkcja=chciwy(),
+                          zmiana=rewolucjonista(),
+                          uczenie=pracus(),
+                              produktywnosc=produktywnosc(jedzenie=1200),
+                              zasoby=zasoby(diamenty=300, programy=0, ubrania=0)),
+      robotnik(2, poziom=1, kariera=rzemieslnik(),
+                          kupowanie=gadzeciarz(),
+                          produkcja=chciwy(),
+                          zmiana=rewolucjonista(),
+                          uczenie=pracus(),
+                          produktywnosc=produktywnosc(jedzenie=1200),
+                          zasoby=zasoby(diamenty=10000, programy=0, ubrania=0))]
+    spekulanci = [
+      spekulant(
+        1,
+        zasoby=zasoby(
+          diamenty=0,
+          narzedzia=0,
+          ubrania=0,
+          programy=100,
+          jedzenie=0
+        ),
+      kariera=sredni())
+    ]
+    cenyproduktow = ceny(ubrania=1)
+    inp = generate_input(robotnicy=robotnicy,
+                         spekulanci=spekulanci,
+                         info=info(dlugosc=1,
+                         gielda=socjalistyczna()))
+    output = get_output(inp, debug)
+
+    assert(get_robotnik(1, output[0]["robotnicy"])["zasoby"]["programy"] == [100])
+    assert(get_robotnik(2, output[0]["robotnicy"])["zasoby"]["programy"] == [])
